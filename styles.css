@@ -2368,6 +2368,458 @@ body {
   line-height: 1.3;
 }
 
+/* AI Recommendation Engine Styles */
+/* Similarity Matrix */
+.similarity-matrix {
+  margin: 1.5rem 0;
+}
+
+.matrix-table {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 1rem;
+}
+
+.matrix-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background: var(--primary);
+  color: white;
+}
+
+.matrix-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.matrix-row:last-child {
+  border-bottom: none;
+}
+
+.matrix-cell {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.matrix-cell.header {
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+}
+
+.matrix-cell.diagonal {
+  background: var(--gray-200);
+  color: var(--gray-800);
+}
+
+.matrix-cell.high {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  color: var(--success);
+  border-left: 3px solid var(--success);
+}
+
+.matrix-cell.medium {
+  background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+  color: #eab308;
+  border-left: 3px solid #eab308;
+}
+
+.matrix-cell.low {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  color: var(--accent);
+  border-left: 3px solid var(--accent);
+}
+
+.matrix-conclusion {
+  background: var(--gray-100);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.conclusion-text {
+  font-size: 1.1rem;
+  color: var(--gray-800);
+}
+
+/* MBTI Example */
+.mbti-example {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mbti-profile {
+  background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.mbti-type {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.mbti-traits {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.recommendation-algorithm {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.recommendation-algorithm h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 1rem;
+}
+
+.algorithm-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.algorithm-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.algorithm-item:hover {
+  transform: translateX(4px);
+}
+
+.algorithm-item.positive {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-left: 3px solid var(--success);
+}
+
+.algorithm-item.negative {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border-left: 3px solid var(--accent);
+}
+
+.algorithm-icon {
+  font-size: 1.2rem;
+  width: 20px;
+  text-align: center;
+}
+
+.algorithm-text {
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+/* Neural Network */
+.neural-network {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.nn-layer {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  min-width: 300px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nn-layer:hover {
+  transform: translateY(-4px);
+}
+
+.input-layer {
+  border-color: var(--primary);
+}
+
+.hidden-layer {
+  border-color: var(--success);
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.output-layer {
+  border-color: var(--accent);
+}
+
+.layer-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 1rem;
+}
+
+.layer-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.layer-item {
+  padding: 0.5rem;
+  background: var(--gray-100);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--gray-700);
+}
+
+.layer-desc {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  margin-bottom: 0.3rem;
+}
+
+.nn-arrow {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.recommendation-results {
+  background: var(--gray-100);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+.recommendation-results h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 1rem;
+}
+
+.result-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.result-place {
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.result-probability {
+  font-weight: 700;
+  color: var(--success);
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+/* Real-time Processing Styles */
+/* Speed Comparison */
+.speed-comparison {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.speed-item {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  min-width: 250px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.speed-item:hover {
+  transform: translateY(-4px);
+}
+
+.speed-item.slow {
+  border-color: var(--accent);
+}
+
+.speed-item.fast {
+  border-color: var(--success);
+}
+
+.speed-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.speed-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 0.8rem;
+}
+
+.speed-desc {
+  color: var(--gray-600);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.speed-time {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.speed-item.slow .speed-time {
+  color: var(--accent);
+}
+
+.speed-item.fast .speed-time {
+  color: var(--success);
+}
+
+.speed-arrow {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  padding: 1rem;
+  background: var(--gray-100);
+  border-radius: 50%;
+}
+
+/* Caching Strategy */
+.caching-strategy {
+  background: var(--gray-100);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+}
+
+.caching-strategy h6 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 1rem;
+}
+
+.strategy-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.strategy-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.strategy-item:hover {
+  transform: translateX(4px);
+}
+
+.strategy-item.cached {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-left: 3px solid var(--success);
+}
+
+.strategy-item.no-cache {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border-left: 3px solid var(--accent);
+}
+
+.strategy-icon {
+  font-size: 1.2rem;
+  width: 20px;
+  text-align: center;
+}
+
+.strategy-text {
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+/* Processing Comparison */
+.processing-comparison {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.processing-method {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  min-width: 300px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.processing-method:hover {
+  transform: translateY(-2px);
+}
+
+.processing-method.old {
+  border-color: var(--accent);
+}
+
+.processing-method.new {
+  border-color: var(--success);
+}
+
+.processing-method .method-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 0.8rem;
+}
+
+.method-flow {
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+.processing-arrow {
+  font-size: 2rem;
+  color: var(--primary);
+  font-weight: bold;
+}
+
 /* Summary Section */
 .summary-section {
   background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);

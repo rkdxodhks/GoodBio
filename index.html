@@ -897,6 +897,203 @@
       </div>
     </section>
 
+    <!-- AI 추천 엔진 섹션 -->
+    <section class="tech-explanation-section">
+      <div class="container">
+        <div class="tech-card">
+          <h3 class="tech-subtitle">
+            <span class="emoji">🤖</span>
+            5. AI 추천 엔진 (어떻게 취향을 파악하나?)
+          </h3>
+
+          <!-- 협업 필터링 -->
+          <div class="tech-method">
+            <h4 class="method-title">
+              <span class="emoji">🎯</span>
+              협업 필터링 (Collaborative Filtering)
+            </h4>
+
+            <div class="method-analogy">
+              <div class="analogy-visual">
+                <div class="word-example positive">
+                  <span class="word-icon">👥</span>
+                  <span class="word-text">취향 비슷한 친구 찾기</span>
+                  <span class="word-desc"
+                    >당신이 A, B 카페를 좋아함<br />다른 사람도 A, B를 좋아함<br />그
+                    사람이 C도 좋아함<br />→ 당신도 C를 좋아할 것!</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="calculation-example">
+              <h5>실제 작동 - 표로 설명</h5>
+              <div class="formula">사용자 유사도 매트릭스</div>
+
+              <div class="similarity-matrix">
+                <div class="matrix-table">
+                  <div class="matrix-header">
+                    <div class="matrix-cell header">사용자</div>
+                    <div class="matrix-cell header">당신</div>
+                    <div class="matrix-cell header">철수</div>
+                    <div class="matrix-cell header">영희</div>
+                    <div class="matrix-cell header">민수</div>
+                  </div>
+                  <div class="matrix-row">
+                    <div class="matrix-cell header">당신</div>
+                    <div class="matrix-cell diagonal">100%</div>
+                    <div class="matrix-cell high">85%</div>
+                    <div class="matrix-cell medium">45%</div>
+                    <div class="matrix-cell low">20%</div>
+                  </div>
+                  <div class="matrix-row">
+                    <div class="matrix-cell header">철수</div>
+                    <div class="matrix-cell high">85%</div>
+                    <div class="matrix-cell diagonal">100%</div>
+                    <div class="matrix-cell medium">60%</div>
+                    <div class="matrix-cell medium">30%</div>
+                  </div>
+                </div>
+
+                <div class="matrix-conclusion">
+                  <div class="conclusion-text">
+                    <strong>→ 철수와 취향이 85% 비슷!</strong><br />
+                    → 철수가 간 곳을 추천
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 콘텐츠 기반 필터링 -->
+          <div class="tech-method">
+            <h4 class="method-title">
+              <span class="emoji">🏷️</span>
+              콘텐츠 기반 필터링
+            </h4>
+
+            <div class="method-analogy">
+              <div class="analogy-visual">
+                <div class="word-example positive">
+                  <span class="word-icon">🔍</span>
+                  <span class="word-text">물건 특징 비교</span>
+                  <span class="word-desc"
+                    >당신이 좋아하는 카페:<br />#조용한 #창가자리 #디저트맛집<br /><br />새로운
+                    카페:<br />#조용한 #루프탑 #디저트맛집<br /><br />→ 3개 중
+                    2개 일치 (67%)<br />→ 추천 점수 높음!</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="calculation-example">
+              <h5>MBTI 활용 예시</h5>
+
+              <div class="mbti-example">
+                <div class="mbti-profile">
+                  <div class="mbti-type">INFP (당신)</div>
+                  <div class="mbti-traits">
+                    → 혼자만의 시간 선호<br />
+                    → 조용한 분위기<br />
+                    → 예술/문화 관심
+                  </div>
+                </div>
+
+                <div class="recommendation-algorithm">
+                  <h6>추천 알고리즘:</h6>
+                  <div class="algorithm-items">
+                    <div class="algorithm-item positive">
+                      <span class="algorithm-icon">✓</span>
+                      <span class="algorithm-text">소규모 갤러리 (+30점)</span>
+                    </div>
+                    <div class="algorithm-item positive">
+                      <span class="algorithm-icon">✓</span>
+                      <span class="algorithm-text">독립서점 (+25점)</span>
+                    </div>
+                    <div class="algorithm-item positive">
+                      <span class="algorithm-icon">✓</span>
+                      <span class="algorithm-text">조용한 카페 (+20점)</span>
+                    </div>
+                    <div class="algorithm-item negative">
+                      <span class="algorithm-icon">✗</span>
+                      <span class="algorithm-text">클럽/바 (-10점)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 딥러닝 추천 -->
+          <div class="tech-method">
+            <h4 class="method-title">
+              <span class="emoji">🤖</span>
+              딥러닝 추천 (Phase 2)
+            </h4>
+
+            <div class="method-analogy">
+              <div class="analogy-visual">
+                <div class="word-example normal">
+                  <span class="word-icon">🧠</span>
+                  <span class="word-text">점점 똑똑해지는 AI</span>
+                  <span class="word-desc"
+                    >Phase 1: 규칙 기반<br />"INFP면 조용한 곳 추천"<br /><br />Phase
+                    2: 학습 기반<br />"이 사람은 비 오는 날엔<br />카페보다
+                    갤러리를 더 선호하네"</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="calculation-example">
+              <h5>PyTorch 신경망 구조 - 간단히</h5>
+
+              <div class="neural-network">
+                <div class="nn-layer input-layer">
+                  <div class="layer-title">입력층</div>
+                  <div class="layer-items">
+                    <div class="layer-item">사용자 정보 (MBTI, 나이)</div>
+                    <div class="layer-item">과거 방문 이력</div>
+                    <div class="layer-item">시간/날씨/동반자</div>
+                    <div class="layer-item">현재 위치</div>
+                  </div>
+                </div>
+
+                <div class="nn-arrow">↓</div>
+
+                <div class="nn-layer hidden-layer">
+                  <div class="layer-title">숨겨진 층</div>
+                  <div class="layer-desc">(AI가 알아서 학습)</div>
+                  <div class="layer-desc">복잡한 패턴 인식</div>
+                </div>
+
+                <div class="nn-arrow">↓</div>
+
+                <div class="nn-layer output-layer">
+                  <div class="layer-title">출력층</div>
+                  <div class="layer-desc">추천 장소 + 확률</div>
+                </div>
+              </div>
+
+              <div class="recommendation-results">
+                <h6>예시:</h6>
+                <div class="result-items">
+                  <div class="result-item">
+                    <span class="result-place">○○갤러리:</span>
+                    <span class="result-probability">92% 좋아할 것</span>
+                  </div>
+                  <div class="result-item">
+                    <span class="result-place">△△카페:</span>
+                    <span class="result-probability">78% 좋아할 것</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 5. 라이브 데모 시뮬레이터 -->
     <section class="demo-section">
       <div class="container">
@@ -1056,6 +1253,130 @@
 
         <div class="revenue-return">
           <p>수익의 30%는 다시 환원 (쿠폰, 리워드, 무료 워크숍)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 실시간 처리 기술 섹션 -->
+    <section class="tech-explanation-section">
+      <div class="container">
+        <div class="tech-card">
+          <h3 class="tech-subtitle">
+            <span class="emoji">⚡</span>
+            6. 실시간 처리 기술 (어떻게 빠르게 하나?)
+          </h3>
+
+          <!-- Redis 캐싱 -->
+          <div class="tech-method">
+            <h4 class="method-title">
+              <span class="emoji">⚡</span>
+              Redis 캐싱
+            </h4>
+
+            <div class="method-analogy">
+              <div class="analogy-visual">
+                <div class="word-example positive">
+                  <span class="word-icon">📝</span>
+                  <span class="word-text">메모지에 적어두기</span>
+                  <span class="word-desc"
+                    >매번 창고(DB)까지 가기 귀찮으니<br />자주 쓰는 건
+                    책상(Redis)에 메모</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="calculation-example">
+              <h5>속도 비교</h5>
+
+              <div class="speed-comparison">
+                <div class="speed-item slow">
+                  <div class="speed-icon">🐌</div>
+                  <div class="speed-title">PostgreSQL (일반 DB)</div>
+                  <div class="speed-desc">"부산 카페 리스트 주세요"</div>
+                  <div class="speed-time">→ 응답: 0.5초</div>
+                </div>
+
+                <div class="speed-arrow">VS</div>
+
+                <div class="speed-item fast">
+                  <div class="speed-icon">⚡</div>
+                  <div class="speed-title">Redis (캐시)</div>
+                  <div class="speed-desc">"부산 카페 리스트 주세요"</div>
+                  <div class="speed-time">→ 응답: 0.01초 (50배 빠름!)</div>
+                </div>
+              </div>
+
+              <div class="caching-strategy">
+                <h6>캐싱 전략</h6>
+                <div class="strategy-items">
+                  <div class="strategy-item cached">
+                    <span class="strategy-icon">✓</span>
+                    <span class="strategy-text">인기 장소 목록 (5분 캐시)</span>
+                  </div>
+                  <div class="strategy-item cached">
+                    <span class="strategy-icon">✓</span>
+                    <span class="strategy-text">사용자 프로필 (10분 캐시)</span>
+                  </div>
+                  <div class="strategy-item cached">
+                    <span class="strategy-icon">✓</span>
+                    <span class="strategy-text">지도 타일 (30분 캐시)</span>
+                  </div>
+                  <div class="strategy-item no-cache">
+                    <span class="strategy-icon">✗</span>
+                    <span class="strategy-text">새 이벤트 (캐시 안 함)</span>
+                  </div>
+                  <div class="strategy-item no-cache">
+                    <span class="strategy-icon">✗</span>
+                    <span class="strategy-text">타임세일 (캐시 안 함)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 비동기 처리 -->
+          <div class="tech-method">
+            <h4 class="method-title">
+              <span class="emoji">🔄</span>
+              비동기 처리
+            </h4>
+
+            <div class="method-analogy">
+              <div class="analogy-visual">
+                <div class="word-example normal">
+                  <span class="word-icon">👥</span>
+                  <span class="word-text">여러 일 동시에 하기</span>
+                  <span class="word-desc"
+                    >동기: ①크롤링 → ②필터링 → ③DB저장<br />= 6초 걸림
+                    (2+2+2)<br /><br />비동기: ①②③ 동시 진행<br />= 2초 걸림
+                    (3배 빠름!)</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="calculation-example">
+              <h5>실제 구현 - FastAPI</h5>
+
+              <div class="processing-comparison">
+                <div class="processing-method old">
+                  <div class="method-title">일반적인 방식:</div>
+                  <div class="method-flow">포스팅 수집 → 기다림 → 필터링</div>
+                </div>
+
+                <div class="processing-arrow">↓</div>
+
+                <div class="processing-method new">
+                  <div class="method-title">FastAPI 방식:</div>
+                  <div class="method-flow">
+                    포스팅 수집 시작<br />→ 기다리지 않고 바로 다음 작업<br />→
+                    끝나면 알림 받음
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
