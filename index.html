@@ -1094,169 +1094,6 @@
       </div>
     </section>
 
-    <!-- 5. 라이브 데모 시뮬레이터 -->
-    <section class="demo-section">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="emoji">📍</span>
-          지도 플로팅 시뮬레이터
-        </h2>
-
-        <div class="map-simulator">
-          <div class="map-header">
-            <span class="location">[지금 부산 남포동]</span>
-            <button class="add-posting-btn" onclick="addNewPosting()">
-              새로운 포스팅 추가하기
-            </button>
-          </div>
-
-          <div class="map-area" id="map-area">
-            <div class="map-pin" data-time="방금 전">📍 빈티지샵</div>
-            <div class="map-pin" data-time="5분 전">📍 카페</div>
-            <div class="map-pin" data-time="10분 전">📍 플리마켓</div>
-          </div>
-        </div>
-
-        <!-- AI 추천 시뮬레이터 -->
-        <div class="ai-recommendation">
-          <h3 class="subsection-title">
-            <span class="emoji">🎮</span>
-            AI 추천 시뮬레이터
-          </h3>
-
-          <div class="chat-interface" id="chat-interface">
-            <div class="chat-message ai-message">
-              <span class="emoji">💬</span>
-              안녕하세요! 오늘 뭐 하고 싶으세요?
-            </div>
-
-            <div class="chat-options">
-              <button class="option-btn" onclick="selectOption('alone')">
-                😊 혼자 조용히
-              </button>
-              <button class="option-btn" onclick="selectOption('friends')">
-                👥 친구랑
-              </button>
-              <button class="option-btn" onclick="selectOption('date')">
-                💕 데이트
-              </button>
-              <button class="option-btn" onclick="selectOption('culture')">
-                🎨 문화생활
-              </button>
-            </div>
-          </div>
-
-          <div class="recommendation-result" id="recommendation-result">
-            <!-- AI 추천 결과가 여기에 표시됩니다 -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. 숫자로 보는 라이브맵 -->
-    <section class="stats-section">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="emoji">📊</span>
-          숫자로 보는 라이브맵
-        </h2>
-
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-number">85%</div>
-            <div class="stat-label">AI 필터링<br />정확도</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">10분</div>
-            <div class="stat-label">실시간<br />업데이트</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">30초</div>
-            <div class="stat-label">코스 생성<br />시간</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">90.4%</div>
-            <div class="stat-label">사용자<br />필요성 공감</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">20%</div>
-            <div class="stat-label">매출<br />증대 목표</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">30%</div>
-            <div class="stat-label">숨은 명소<br />추천 비율</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. 수익 모델 -->
-    <section class="revenue-section">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="emoji">💰</span>
-          어떻게 돈을 벌까?
-        </h2>
-
-        <div class="revenue-flow">
-          <div class="revenue-step">
-            <div class="step-icon">👥</div>
-            <div class="step-content">
-              <h4>무료 사용자</h4>
-              <p>탐험가들이 무료로 사용</p>
-            </div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="revenue-step">
-            <div class="step-icon">📊</div>
-            <div class="step-content">
-              <h4>데이터 생성</h4>
-              <p>어디 갔는지, 뭘 좋아하는지</p>
-            </div>
-          </div>
-          <div class="flow-arrow">→</div>
-          <div class="revenue-step">
-            <div class="step-icon">🏪</div>
-            <div class="step-content">
-              <h4>소상공인에게 가치 제공</h4>
-              <p>이 데이터로 분석 리포트 제공</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="revenue-methods">
-          <div class="method-card">
-            <div class="method-icon">📌</div>
-            <div class="method-content">
-              <h4>스마트 핀</h4>
-              <div class="price">월 3만원</div>
-              <p>내 가게 지도에 표시</p>
-            </div>
-          </div>
-          <div class="method-card">
-            <div class="method-icon">📊</div>
-            <div class="method-content">
-              <h4>분석 리포트</h4>
-              <div class="price">월 80만원</div>
-              <p>우리 동네 트렌드 알려줌</p>
-            </div>
-          </div>
-          <div class="method-card">
-            <div class="method-icon">💳</div>
-            <div class="method-content">
-              <h4>거래 수수료</h4>
-              <div class="price">5-10%</div>
-              <p>예약/쿠폰 사용 시</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="revenue-return">
-          <p>수익의 30%는 다시 환원 (쿠폰, 리워드, 무료 워크숍)</p>
-        </div>
-      </div>
-    </section>
-
     <!-- 실시간 처리 기술 섹션 -->
     <section class="tech-explanation-section">
       <div class="container">
@@ -1533,147 +1370,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. 차별점 -->
-    <section class="comparison-section">
-      <div class="container">
-        <h2 class="section-title">
-          <span class="emoji">⚡</span>
-          VS 기존 서비스
-        </h2>
-
-        <div class="comparison-table-enhanced">
-          <div class="comparison-header-enhanced">
-            <div class="feature-column">기능</div>
-            <div class="service-column live-map-column">
-              <div class="service-logo">🗺️</div>
-              <div class="service-title">라이브맵</div>
-              <div class="service-badge">우리 서비스</div>
-            </div>
-            <div class="service-column competitor-column">
-              <div class="service-logo">🟡</div>
-              <div class="service-title">카카오맵</div>
-              <div class="service-badge">기존 서비스</div>
-            </div>
-            <div class="service-column competitor-column">
-              <div class="service-logo">📷</div>
-              <div class="service-title">인스타그램</div>
-              <div class="service-badge">기존 서비스</div>
-            </div>
-          </div>
-
-          <div class="comparison-row-enhanced">
-            <div class="feature-cell">
-              <div class="feature-icon">⚡</div>
-              <div class="feature-text">실시간 정보</div>
-            </div>
-            <div class="value-cell live-cell">
-              <div class="value-icon">✅</div>
-              <div class="value-text">10분</div>
-              <div class="value-desc">초고속 업데이트</div>
-            </div>
-            <div class="value-cell none-cell">
-              <div class="value-icon">❌</div>
-              <div class="value-text">없음</div>
-              <div class="value-desc">정적 정보만</div>
-            </div>
-            <div class="value-cell partial-cell">
-              <div class="value-icon">⚠️</div>
-              <div class="value-text">찾기 힘듦</div>
-              <div class="value-desc">검색 필요</div>
-            </div>
-          </div>
-
-          <div class="comparison-row-enhanced">
-            <div class="feature-cell">
-              <div class="feature-icon">🛡️</div>
-              <div class="feature-text">광고 필터링</div>
-            </div>
-            <div class="value-cell live-cell">
-              <div class="value-icon">✅</div>
-              <div class="value-text">85%</div>
-              <div class="value-desc">AI 자동 필터링</div>
-            </div>
-            <div class="value-cell none-cell">
-              <div class="value-icon">❌</div>
-              <div class="value-text">없음</div>
-              <div class="value-desc">광고 혼재</div>
-            </div>
-            <div class="value-cell none-cell">
-              <div class="value-icon">❌</div>
-              <div class="value-text">많음</div>
-              <div class="value-desc">광고 범람</div>
-            </div>
-          </div>
-
-          <div class="comparison-row-enhanced">
-            <div class="feature-cell">
-              <div class="feature-icon">🤖</div>
-              <div class="feature-text">AI 추천</div>
-            </div>
-            <div class="value-cell live-cell">
-              <div class="value-icon">✅</div>
-              <div class="value-text">30초</div>
-              <div class="value-desc">개인 맞춤 추천</div>
-            </div>
-            <div class="value-cell none-cell">
-              <div class="value-icon">❌</div>
-              <div class="value-text">없음</div>
-              <div class="value-desc">단순 검색만</div>
-            </div>
-            <div class="value-cell none-cell">
-              <div class="value-icon">❌</div>
-              <div class="value-text">없음</div>
-              <div class="value-desc">알고리즘 기반</div>
-            </div>
-          </div>
-
-          <div class="comparison-row-enhanced">
-            <div class="feature-cell">
-              <div class="feature-icon">💎</div>
-              <div class="feature-text">숨은 명소</div>
-            </div>
-            <div class="value-cell live-cell">
-              <div class="value-icon">✅</div>
-              <div class="value-text">30%</div>
-              <div class="value-desc">발굴 비율</div>
-            </div>
-            <div class="value-cell none-cell">
-              <div class="value-icon">❌</div>
-              <div class="value-text">핫플위주</div>
-              <div class="value-desc">인기 장소만</div>
-            </div>
-            <div class="value-cell partial-cell">
-              <div class="value-icon">⚠️</div>
-              <div class="value-text">발견 어려움</div>
-              <div class="value-desc">검색 의존</div>
-            </div>
-          </div>
-
-          <div class="comparison-row-enhanced">
-            <div class="feature-cell">
-              <div class="feature-icon">💝</div>
-              <div class="feature-text">소상공인 지원</div>
-            </div>
-            <div class="value-cell live-cell">
-              <div class="value-icon">✅</div>
-              <div class="value-text">30% 환원</div>
-              <div class="value-desc">실제 혜택</div>
-            </div>
-            <div class="value-cell none-cell">
-              <div class="value-icon">❌</div>
-              <div class="value-text">없음</div>
-              <div class="value-desc">광고비만</div>
-            </div>
-            <div class="value-cell none-cell">
-              <div class="value-icon">❌</div>
-              <div class="value-text">없음</div>
-              <div class="value-desc">마케팅 비용</div>
             </div>
           </div>
         </div>
@@ -2155,6 +1851,308 @@
       </div>
     </section>
 
+    <!-- 5. 라이브 데모 시뮬레이터 -->
+    <section class="demo-section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="emoji">📍</span>
+          지도 플로팅 시뮬레이터
+        </h2>
+
+        <div class="map-simulator">
+          <div class="map-header">
+            <span class="location">[지금 부산 남포동]</span>
+            <button class="add-posting-btn" onclick="addNewPosting()">
+              새로운 포스팅 추가하기
+            </button>
+          </div>
+
+          <div class="map-area" id="map-area">
+            <div class="map-pin" data-time="방금 전">📍 빈티지샵</div>
+            <div class="map-pin" data-time="5분 전">📍 카페</div>
+            <div class="map-pin" data-time="10분 전">📍 플리마켓</div>
+          </div>
+        </div>
+
+        <!-- AI 추천 시뮬레이터 -->
+        <div class="ai-recommendation">
+          <h3 class="subsection-title">
+            <span class="emoji">🎮</span>
+            AI 추천 시뮬레이터
+          </h3>
+
+          <div class="chat-interface" id="chat-interface">
+            <div class="chat-message ai-message">
+              <span class="emoji">💬</span>
+              안녕하세요! 오늘 뭐 하고 싶으세요?
+            </div>
+
+            <div class="chat-options">
+              <button class="option-btn" onclick="selectOption('alone')">
+                😊 혼자 조용히
+              </button>
+              <button class="option-btn" onclick="selectOption('friends')">
+                👥 친구랑
+              </button>
+              <button class="option-btn" onclick="selectOption('date')">
+                💕 데이트
+              </button>
+              <button class="option-btn" onclick="selectOption('culture')">
+                🎨 문화생활
+              </button>
+            </div>
+          </div>
+
+          <div class="recommendation-result" id="recommendation-result">
+            <!-- AI 추천 결과가 여기에 표시됩니다 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 숫자로 보는 라이브맵 -->
+    <section class="stats-section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="emoji">📊</span>
+          숫자로 보는 라이브맵
+        </h2>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">85%</div>
+            <div class="stat-label">AI 필터링<br />정확도</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">10분</div>
+            <div class="stat-label">실시간<br />업데이트</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">30초</div>
+            <div class="stat-label">코스 생성<br />시간</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">90.4%</div>
+            <div class="stat-label">사용자<br />필요성 공감</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">20%</div>
+            <div class="stat-label">매출<br />증대 목표</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">30%</div>
+            <div class="stat-label">숨은 명소<br />추천 비율</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 수익 모델 -->
+    <section class="revenue-section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="emoji">💰</span>
+          어떻게 돈을 벌까?
+        </h2>
+
+        <div class="revenue-flow">
+          <div class="revenue-step">
+            <div class="step-icon">👥</div>
+            <div class="step-content">
+              <h4>무료 사용자</h4>
+              <p>탐험가들이 무료로 사용</p>
+            </div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="revenue-step">
+            <div class="step-icon">📊</div>
+            <div class="step-content">
+              <h4>데이터 생성</h4>
+              <p>어디 갔는지, 뭘 좋아하는지</p>
+            </div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="revenue-step">
+            <div class="step-icon">🏪</div>
+            <div class="step-content">
+              <h4>소상공인에게 가치 제공</h4>
+              <p>이 데이터로 분석 리포트 제공</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="revenue-methods">
+          <div class="method-card">
+            <div class="method-icon">📌</div>
+            <div class="method-content">
+              <h4>스마트 핀</h4>
+              <div class="price">월 3만원</div>
+              <p>내 가게 지도에 표시</p>
+            </div>
+          </div>
+          <div class="method-card">
+            <div class="method-icon">📊</div>
+            <div class="method-content">
+              <h4>분석 리포트</h4>
+              <div class="price">월 80만원</div>
+              <p>우리 동네 트렌드 알려줌</p>
+            </div>
+          </div>
+          <div class="method-card">
+            <div class="method-icon">💳</div>
+            <div class="method-content">
+              <h4>거래 수수료</h4>
+              <div class="price">5-10%</div>
+              <p>예약/쿠폰 사용 시</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="revenue-return">
+          <p>수익의 30%는 다시 환원 (쿠폰, 리워드, 무료 워크숍)</p>
+        </div>
+      </div>
+    </section>
+    <!-- 8. 차별점 -->
+    <section class="comparison-section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="emoji">⚡</span>
+          VS 기존 서비스
+        </h2>
+
+        <div class="comparison-table-enhanced">
+          <div class="comparison-header-enhanced">
+            <div class="feature-column">기능</div>
+            <div class="service-column live-map-column">
+              <div class="service-logo">🗺️</div>
+              <div class="service-title">라이브맵</div>
+              <div class="service-badge">우리 서비스</div>
+            </div>
+            <div class="service-column competitor-column">
+              <div class="service-logo">🟡</div>
+              <div class="service-title">카카오맵</div>
+              <div class="service-badge">기존 서비스</div>
+            </div>
+            <div class="service-column competitor-column">
+              <div class="service-logo">📷</div>
+              <div class="service-title">인스타그램</div>
+              <div class="service-badge">기존 서비스</div>
+            </div>
+          </div>
+
+          <div class="comparison-row-enhanced">
+            <div class="feature-cell">
+              <div class="feature-icon">⚡</div>
+              <div class="feature-text">실시간 정보</div>
+            </div>
+            <div class="value-cell live-cell">
+              <div class="value-icon">✅</div>
+              <div class="value-text">10분</div>
+              <div class="value-desc">초고속 업데이트</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">없음</div>
+              <div class="value-desc">정적 정보만</div>
+            </div>
+            <div class="value-cell partial-cell">
+              <div class="value-icon">⚠️</div>
+              <div class="value-text">찾기 힘듦</div>
+              <div class="value-desc">검색 필요</div>
+            </div>
+          </div>
+
+          <div class="comparison-row-enhanced">
+            <div class="feature-cell">
+              <div class="feature-icon">🛡️</div>
+              <div class="feature-text">광고 필터링</div>
+            </div>
+            <div class="value-cell live-cell">
+              <div class="value-icon">✅</div>
+              <div class="value-text">85%</div>
+              <div class="value-desc">AI 자동 필터링</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">없음</div>
+              <div class="value-desc">광고 혼재</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">많음</div>
+              <div class="value-desc">광고 범람</div>
+            </div>
+          </div>
+
+          <div class="comparison-row-enhanced">
+            <div class="feature-cell">
+              <div class="feature-icon">🤖</div>
+              <div class="feature-text">AI 추천</div>
+            </div>
+            <div class="value-cell live-cell">
+              <div class="value-icon">✅</div>
+              <div class="value-text">30초</div>
+              <div class="value-desc">개인 맞춤 추천</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">없음</div>
+              <div class="value-desc">단순 검색만</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">없음</div>
+              <div class="value-desc">알고리즘 기반</div>
+            </div>
+          </div>
+
+          <div class="comparison-row-enhanced">
+            <div class="feature-cell">
+              <div class="feature-icon">💎</div>
+              <div class="feature-text">숨은 명소</div>
+            </div>
+            <div class="value-cell live-cell">
+              <div class="value-icon">✅</div>
+              <div class="value-text">30%</div>
+              <div class="value-desc">발굴 비율</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">핫플위주</div>
+              <div class="value-desc">인기 장소만</div>
+            </div>
+            <div class="value-cell partial-cell">
+              <div class="value-icon">⚠️</div>
+              <div class="value-text">발견 어려움</div>
+              <div class="value-desc">검색 의존</div>
+            </div>
+          </div>
+
+          <div class="comparison-row-enhanced">
+            <div class="feature-cell">
+              <div class="feature-icon">💝</div>
+              <div class="feature-text">소상공인 지원</div>
+            </div>
+            <div class="value-cell live-cell">
+              <div class="value-icon">✅</div>
+              <div class="value-text">30% 환원</div>
+              <div class="value-desc">실제 혜택</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">없음</div>
+              <div class="value-desc">광고비만</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">없음</div>
+              <div class="value-desc">마케팅 비용</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- 9. 일정 -->
     <section class="timeline-section">
       <div class="container">
