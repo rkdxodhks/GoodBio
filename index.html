@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🗺️ 라이브맵 - SNS를 실시간 지도로</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- 1. 한 줄 개념 (Top) -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="emoji">🗺️</span>
+            라이브맵
+          </h1>
+          <p class="hero-subtitle">
+            소상공인의 SNS를 AI가 읽고<br />
+            실시간 지도로 바꿔주는 서비스
+          </p>
+          <button class="cta-button" onclick="scrollToSection('story')">
+            5분 이해하기 →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 이해를 위한 3단 스토리 -->
+    <section id="story" class="story-section">
+      <div class="container">
+        <!-- 문제 -->
+        <div class="story-card problem">
+          <h2 class="section-title">
+            <span class="emoji">💡</span>
+            문제: 왜 필요한가요?
+          </h2>
+          <div class="problem-grid">
+            <div class="problem-item">
+              <div class="problem-icon">😵‍💫</div>
+              <h3>"인스타에서 본 카페, 어디였더라?"</h3>
+              <p>기억 안 남, 찾기 어려움</p>
+            </div>
+            <div class="problem-item">
+              <div class="problem-icon">🤔</div>
+              <h3>"광고인지 진짜인지 모르겠어"</h3>
+              <p>협찬 리뷰 vs 진짜 후기 구분 안 됨</p>
+            </div>
+            <div class="problem-item">
+              <div class="problem-icon">😰</div>
+              <h3>"핫플만 가면 사람 너무 많아"</h3>
+              <p>숨은 명소는 어떻게 찾지?</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 아이디어 -->
+        <div class="story-card solution">
+          <h2 class="section-title">
+            <span class="emoji">✨</span>
+            아이디어: 어떻게 해결하나요?
+          </h2>
+
+          <!-- 시각적 플로우 다이어그램 -->
+          <div class="upgraded-flow-container">
+            <div class="flow-step-enhanced">
+              <div class="step-visual">
+                <div class="step-icon-large">📱</div>
+                <div class="step-number">01</div>
+              </div>
+              <div class="step-content-enhanced">
+                <h4>SNS 포스팅 수집</h4>
+                <p class="step-description">
+                  카페 사장님이 인스타에<br />"오늘만 타임세일!" 올림
+                </p>
+                <div class="step-detail">
+                  <span class="detail-icon">🔄</span>
+                  <span>실시간 모니터링</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flow-connector">
+              <div class="connector-line"></div>
+              <div class="connector-arrow">→</div>
+              <div class="connector-label">10초</div>
+            </div>
+
+            <div class="flow-step-enhanced">
+              <div class="step-visual">
+                <div class="step-icon-large">🤖</div>
+                <div class="step-number">02</div>
+              </div>
+              <div class="step-content-enhanced">
+                <h4>AI가 진짜/광고 판별</h4>
+                <p class="step-description">
+                  협찬 아니고 진짜 세일인지<br />AI가 자동으로 확인
+                </p>
+                <div class="step-detail">
+                  <span class="detail-icon">🎯</span>
+                  <span>85% 정확도</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flow-connector">
+              <div class="connector-line"></div>
+              <div class="connector-arrow">→</div>
+              <div class="connector-label">5분</div>
+            </div>
+
+            <div class="flow-step-enhanced">
+              <div class="step-visual">
+                <div class="step-icon-large">🗺️</div>
+                <div class="step-number">03</div>
+              </div>
+              <div class="step-content-enhanced">
+                <h4>지도에 실시간 표시</h4>
+                <p class="step-description">
+                  10분 전 올라온 정보가<br />내 앞 지도에 바로 뜸
+                </p>
+                <div class="step-detail">
+                  <span class="detail-icon">📍</span>
+                  <span>10m 정확도</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flow-connector">
+              <div class="connector-line"></div>
+              <div class="connector-arrow">→</div>
+              <div class="connector-label">30초</div>
+            </div>
+
+            <div class="flow-step-enhanced final-step">
+              <div class="step-visual">
+                <div class="step-icon-large">🎯</div>
+                <div class="step-number">04</div>
+              </div>
+              <div class="step-content-enhanced">
+                <h4>30초 코스 자동 생성</h4>
+                <p class="step-description">
+                  AI가 내 취향 맞춰서<br />오늘 갈 곳 추천
+                </p>
+                <div class="step-detail">
+                  <span class="detail-icon">⚡</span>
+                  <span>개인화 추천</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 하이라이트 박스 -->
+          <div class="solution-highlight">
+            <div class="highlight-content">
+              <div class="highlight-icon">🚀</div>
+              <div class="highlight-text">
+                <h3>총 소요시간: <span class="highlight-number">10분</span></h3>
+                <p>
+                  SNS 포스팅부터 개인 맞춤 추천까지, 모든 과정이 자동화됩니다
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 결과 -->
+        <div class="story-card result">
+          <h2 class="section-title">
+            <span class="emoji">🎯</span>
+            결과: 무엇이 달라지나요?
+          </h2>
+          <div class="before-after">
+            <div class="before-card">
+              <h3>Before</h3>
+              <ul>
+                <li>검색 2시간</li>
+                <li>광고 구분 힘듦</li>
+                <li>핫플만 몰림</li>
+              </ul>
+            </div>
+            <div class="arrow-transform">→</div>
+            <div class="after-card">
+              <h3>After</h3>
+              <ul>
+                <li>30초 추천</li>
+                <li>AI 필터링</li>
+                <li>숨은 명소 발견</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 핵심 기술 (쉽게 풀어서) -->
+    <section class="tech-section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="emoji">🤖</span>
+          AI 필터링: 어떻게 광고를 걸러낼까?
+        </h2>
+
+        <div class="ai-simulator">
+          <div class="posting-examples">
+            <div class="posting-card" id="posting-real">
+              <div class="posting-header">
+                <span class="posting-type">📱 진짜 정보</span>
+                <button class="analyze-btn" onclick="analyzePosting('real')">
+                  AI 분석 시작
+                </button>
+              </div>
+              <div class="posting-content">"오늘만 50% 타임세일! 5시까지"</div>
+            </div>
+
+            <div class="posting-card" id="posting-ads">
+              <div class="posting-header">
+                <span class="posting-type">📱 광고성 정보</span>
+                <button class="analyze-btn" onclick="analyzePosting('ads')">
+                  AI 분석 시작
+                </button>
+              </div>
+              <div class="posting-content">
+                "협찬받은 신메뉴 출시! #AD #협찬"
+              </div>
+            </div>
+          </div>
+
+          <div class="analysis-result" id="analysis-result">
+            <div class="analysis-step">
+              <h4>🔍 1단계: 키워드 분석</h4>
+              <p>광고 의심 키워드 검사</p>
+            </div>
+            <div class="analysis-step">
+              <h4>🧠 2단계: AI 문맥 이해</h4>
+              <p>진짜 정보인지 판단</p>
+            </div>
+            <div class="analysis-step">
+              <h4>📍 3단계: 위치 확인</h4>
+              <p>GPS 정보 검증</p>
+            </div>
+            <div class="final-score">
+              <span class="score-label">최종 점수:</span>
+              <span class="score-value" id="score">--점 / 100점</span>
+              <span class="result-badge" id="result-badge">--</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 실시간 업데이트 -->
+        <div class="realtime-section">
+          <h3 class="subsection-title">
+            <span class="emoji">⚡</span>
+            실시간 업데이트: 얼마나 빠른가?
+          </h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <span class="time">14:00</span>
+              <span class="action">사장님이 인스타에 "타임세일" 올림</span>
+            </div>
+            <div class="timeline-arrow">↓</div>
+            <div class="timeline-item">
+              <span class="time">14:05</span>
+              <span class="action">라이브맵 AI가 자동으로 감지</span>
+            </div>
+            <div class="timeline-arrow">↓</div>
+            <div class="timeline-item">
+              <span class="time">14:06</span>
+              <span class="action">광고 아님을 확인하고 승인</span>
+            </div>
+            <div class="timeline-arrow">↓</div>
+            <div class="timeline-item">
+              <span class="time">14:07</span>
+              <span class="action">1km 반경 사용자에게 알림 발송</span>
+            </div>
+            <div class="timeline-arrow">↓</div>
+            <div class="timeline-item">
+              <span class="time">14:10</span>
+              <span class="action">내 앞 지도에 "NEW" 배지로 표시</span>
+            </div>
+          </div>
+          <div class="timeline-summary">
+            <span class="emoji">⏱️</span>
+            <span>총 소요시간: 10분 이내</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 기술 설명 (쉽게 이해하기) -->
+    <section class="tech-explanation-section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="emoji">🔧</span>
+          기술 설명 (쉽게 이해하기)
+        </h2>
+
+        <!-- 1. 전체 시스템 구조 (건물에 비유) -->
+        <div class="tech-card">
+          <h3 class="tech-subtitle">
+            <span class="emoji">🏢</span>
+            1. 전체 시스템 구조 (건물에 비유)
+          </h3>
+
+          <div class="building-diagram">
+            <!-- 4층: 사용자 인터페이스 -->
+            <div class="building-floor floor-4">
+              <div class="floor-header">
+                <div class="floor-number">4층</div>
+                <div class="floor-title">🏠 사용자가 보는 앱/웹</div>
+              </div>
+              <div class="floor-content">
+                <div class="tech-item">
+                  <div class="tech-icon">📱</div>
+                  <div class="tech-name">React Native</div>
+                  <div class="tech-desc">스마트폰 앱</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">🌐</div>
+                  <div class="tech-name">Next.js</div>
+                  <div class="tech-desc">웹 대시보드</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">🗺️</div>
+                  <div class="tech-name">Mapbox</div>
+                  <div class="tech-desc">지도 화면</div>
+                </div>
+              </div>
+              <div class="floor-note">
+                → 비유: 건물의 외관, 사람들이 직접 보고 만지는 부분
+              </div>
+            </div>
+
+            <!-- 3층: API Gateway -->
+            <div class="building-floor floor-3">
+              <div class="floor-header">
+                <div class="floor-number">3층</div>
+                <div class="floor-title">🚪 교통 정리 (API Gateway)</div>
+              </div>
+              <div class="floor-content">
+                <div class="tech-item">
+                  <div class="tech-icon">⚡</div>
+                  <div class="tech-name">FastAPI</div>
+                  <div class="tech-desc">문지기 역할</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">🔐</div>
+                  <div class="tech-name">JWT</div>
+                  <div class="tech-desc">신분증 확인</div>
+                </div>
+              </div>
+              <div class="floor-note">
+                → 비유: 아파트 경비실, 누가 들어오는지 확인
+              </div>
+            </div>
+
+            <!-- 2층: 서비스 -->
+            <div class="building-floor floor-2">
+              <div class="floor-header">
+                <div class="floor-number">2층</div>
+                <div class="floor-title">🤖 일 처리하는 곳 (서비스)</div>
+              </div>
+              <div class="floor-content">
+                <div class="tech-item">
+                  <div class="tech-icon">🎯</div>
+                  <div class="tech-name">추천 서비스</div>
+                  <div class="tech-desc">AI 플래너</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">🔍</div>
+                  <div class="tech-name">필터링 서비스</div>
+                  <div class="tech-desc">광고 걸러내기</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">📍</div>
+                  <div class="tech-name">지도 서비스</div>
+                  <div class="tech-desc">위치 찾기</div>
+                </div>
+              </div>
+              <div class="floor-note">→ 비유: 각 부서, 각자 맡은 일 처리</div>
+            </div>
+
+            <!-- 1층: 데이터베이스 -->
+            <div class="building-floor floor-1">
+              <div class="floor-header">
+                <div class="floor-number">1층</div>
+                <div class="floor-title">💾 창고 (데이터베이스)</div>
+              </div>
+              <div class="floor-content">
+                <div class="tech-item">
+                  <div class="tech-icon">🗄️</div>
+                  <div class="tech-name">PostgreSQL</div>
+                  <div class="tech-desc">주 창고</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">⚡</div>
+                  <div class="tech-name">Redis</div>
+                  <div class="tech-desc">급한 거 빠르게</div>
+                </div>
+                <div class="tech-item">
+                  <div class="tech-icon">📊</div>
+                  <div class="tech-name">BigQuery</div>
+                  <div class="tech-desc">분석용 창고</div>
+                </div>
+              </div>
+              <div class="floor-note">→ 비유: 지하 창고, 모든 정보 저장</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. SNS 크롤링 -->
+        <div class="tech-card">
+          <h3 class="tech-subtitle">
+            <span class="emoji">🕷️</span>
+            2. SNS 크롤링 (어떻게 정보를 모으나?)
+          </h3>
+
+          <div class="crawling-explanation">
+            <div class="crawling-analogy">
+              <div class="analogy-icon">📰</div>
+              <div class="analogy-content">
+                <h4>크롤링이 뭔가요? (비유: 신문 배달부)</h4>
+                <p>
+                  옛날 신문 배달부가 동네 집집마다 신문을 배달하듯이,<br />
+                  크롤링 로봇이 인스타그램, 페이스북을 자동으로 돌아다니며 새
+                  포스팅을 수집해요
+                </p>
+              </div>
+            </div>
+
+            <div class="crawling-steps">
+              <div class="crawling-step">
+                <div class="step-number">①</div>
+                <div class="step-content">
+                  <h5>API 연결</h5>
+                  <p>
+                    Instagram Graph API 사용<br />(공식적으로 허락받은 방법)
+                  </p>
+                </div>
+              </div>
+
+              <div class="crawling-step">
+                <div class="step-number">②</div>
+                <div class="step-content">
+                  <h5>주기적 확인</h5>
+                  <p>
+                    5분마다: 긴급 정보 (타임세일)<br />
+                    30분마다: 일반 이벤트<br />
+                    60분마다: 정기 업데이트
+                  </p>
+                </div>
+              </div>
+
+              <div class="crawling-step">
+                <div class="step-number">③</div>
+                <div class="step-content">
+                  <h5>데이터 추출</h5>
+                  <p>
+                    • 텍스트: "오늘만 50% 세일"<br />
+                    • 이미지: 가게 사진<br />
+                    • 위치: GPS 태그<br />
+                    • 시간: 언제 올렸는지
+                  </p>
+                </div>
+              </div>
+
+              <div class="crawling-step">
+                <div class="step-number">④</div>
+                <div class="step-content">
+                  <h5>자동 분류</h5>
+                  <p>타입 구분 (타임세일/팝업/플리마켓)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 크롤링 모니터링 대시보드 시뮬레이터 -->
+          <div class="crawling-dashboard">
+            <h4 class="dashboard-title">
+              <span class="emoji">📊</span>
+              크롤링 모니터링 대시보드 (시뮬레이터)
+            </h4>
+
+            <div class="dashboard-container">
+              <div class="dashboard-header">
+                <span class="emoji">🕐</span>
+                <span>현재 시각: <span id="current-time">14:23</span></span>
+              </div>
+
+              <div class="progress-section">
+                <h5>📥 수집 중인 소스</h5>
+                <div class="progress-bar-container">
+                  <div class="progress-bar" id="crawling-progress"></div>
+                  <span class="progress-text">85%</span>
+                </div>
+              </div>
+
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <span class="stat-label">Instagram:</span>
+                  <span class="stat-value">142건 / 200건 완료</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Facebook:</span>
+                  <span class="stat-value">78건 / 100건 완료</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">직접 등록:</span>
+                  <span class="stat-value">12건 / 즉시 처리</span>
+                </div>
+              </div>
+
+              <div class="performance-stats">
+                <div class="perf-item">
+                  <span class="emoji">🎯</span>
+                  <span>분당 처리 속도: 23건</span>
+                </div>
+                <div class="perf-item">
+                  <span class="emoji">⚡</span>
+                  <span>평균 응답 시간: 1.2초</span>
+                </div>
+                <div class="perf-item">
+                  <span class="emoji">✅</span>
+                  <span>성공률: 96.3%</span>
+                </div>
+              </div>
+
+              <div class="recent-posts">
+                <h5>[최근 수집된 포스팅]</h5>
+                <div class="post-list">
+                  <div class="post-item">• 남포동 빈티지샵 - 2분 전</div>
+                  <div class="post-item">• 해운대 카페 타임세일 - 5분 전</div>
+                  <div class="post-item">• 서면 플리마켓 오픈 - 8분 전</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. AI 필터링 기술 -->
+        <div class="tech-card">
+          <h3 class="tech-subtitle">
+            <span class="emoji">🧠</span>
+            3. AI 필터링 기술 (어떻게 광고를 걸러내나?)
+          </h3>
+
+          <!-- TF-IDF 설명 -->
+          <div class="filtering-tech">
+            <div class="tech-method">
+              <h4 class="method-title">
+                <span class="emoji">⚖️</span>
+                TF-IDF란? (텍스트 분석 1단계)
+              </h4>
+
+              <div class="method-analogy">
+                <div class="analogy-visual">
+                  <div class="word-example suspicious">
+                    <span class="word-icon">🪨</span>
+                    <span class="word-text">"협찬" "광고"</span>
+                    <span class="word-desc">무거운 돌 (의심스러움)</span>
+                  </div>
+                  <div class="word-example normal">
+                    <span class="word-icon">🌿</span>
+                    <span class="word-text">"오픈" "세일"</span>
+                    <span class="word-desc">가벼운 풀 (괜찮음)</span>
+                  </div>
+                </div>
+                <p class="analogy-text">
+                  문장에 무거운 돌이 많으면 → 광고 가능성 높음!
+                </p>
+              </div>
+
+              <div class="calculation-example">
+                <h5>[실제 계산 방식]</h5>
+                <div class="formula">TF-IDF = 단어 빈도 × 중요도</div>
+
+                <div class="example-post">
+                  <p>예시: "협찬받은 신제품 출시! #광고"</p>
+                </div>
+
+                <div class="word-analysis">
+                  <div class="analysis-item high">
+                    <span class="word">"협찬"</span>
+                    <span class="weight">→ 가중치 0.94 (높음)</span>
+                    <span class="icon">⚠️</span>
+                  </div>
+                  <div class="analysis-item high">
+                    <span class="word">"#광고"</span>
+                    <span class="weight">→ 가중치 0.91 (높음)</span>
+                    <span class="icon">⚠️</span>
+                  </div>
+                  <div class="analysis-item medium">
+                    <span class="word">"출시"</span>
+                    <span class="weight">→ 가중치 0.32 (보통)</span>
+                    <span class="icon">✅</span>
+                  </div>
+                </div>
+
+                <div class="final-result">총점: 광고 의심도 89% → 필터링</div>
+              </div>
+            </div>
+
+            <!-- LLM API 설명 -->
+            <div class="tech-method">
+              <h4 class="method-title">
+                <span class="emoji">🤖</span>
+                LLM API란? (AI 검증 2단계)
+              </h4>
+
+              <div class="method-analogy">
+                <div class="analogy-comparison">
+                  <div class="comparison-item">
+                    <div class="comparison-icon">🔍</div>
+                    <div class="comparison-text">TF-IDF: 단어만 봄</div>
+                  </div>
+                  <div class="comparison-arrow">→</div>
+                  <div class="comparison-item">
+                    <div class="comparison-icon">🧠</div>
+                    <div class="comparison-text">LLM: 문맥을 이해</div>
+                  </div>
+                </div>
+                <p class="analogy-text">비유: 사람처럼 이해하는 AI</p>
+              </div>
+
+              <div class="llm-example">
+                <h5>[실제 작동]</h5>
+                <div class="api-call">
+                  <div class="api-question">
+                    Gemini API에게 물어봄: "이게 광고인가요?"
+                  </div>
+
+                  <div class="input-text">입력: "오늘만 50% 세일! 5시까지"</div>
+
+                  <div class="llm-thinking">
+                    <h6>LLM 사고 과정:</h6>
+                    <div class="thinking-steps">
+                      <div class="thinking-step">
+                        ✓ "오늘만" = 긴급성 (진짜 같음)
+                      </div>
+                      <div class="thinking-step">
+                        ✓ "5시까지" = 명확한 시간 (진짜 같음)
+                      </div>
+                      <div class="thinking-step">✓ 협찬/광고 언급 없음</div>
+                      <div class="thinking-step">✓ 과장된 표현 적음</div>
+                    </div>
+                  </div>
+
+                  <div class="llm-result">
+                    <strong>결론: "진짜 정보 같아요" (신뢰도 78%)</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="why-combine">
+                <h5>왜 2개를 같이 쓰나?</h5>
+                <div class="comparison-table">
+                  <div class="comparison-row">
+                    <div class="tech-name">TF-IDF</div>
+                    <div class="tech-pros">빠름 (0.1초)</div>
+                    <div class="tech-cons">단순</div>
+                  </div>
+                  <div class="comparison-row">
+                    <div class="tech-name">LLM</div>
+                    <div class="tech-pros">똑똑함</div>
+                    <div class="tech-cons">느림 (0.5초)</div>
+                  </div>
+                  <div class="comparison-result">
+                    → 둘을 합치면 빠르면서도 정확!
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 신뢰 스코어 계산 시뮬레이터 -->
+            <div class="trust-score-simulator">
+              <h4 class="simulator-title">
+                <span class="emoji">⚖️</span>
+                신뢰 스코어 계산 (시뮬레이터)
+              </h4>
+
+              <div class="score-calculator">
+                <div class="input-section">
+                  <h5>포스팅 예시:</h5>
+                  <div class="example-text">
+                    "방금 구운 빵 나왔어요! 서면역"
+                  </div>
+                </div>
+
+                <div class="calculation-section">
+                  <div class="calc-status">
+                    <span class="emoji">⏳</span>
+                    <span>[점수 계산 중...]</span>
+                  </div>
+
+                  <button
+                    class="calculate-btn"
+                    onclick="calculateDetailedTrustScore()"
+                  >
+                    상세 분석하기
+                  </button>
+                </div>
+
+                <div class="result-section" id="trust-score-result">
+                  <!-- 계산 결과가 여기에 표시됩니다 -->
+                </div>
+
+                <!-- 단계별 분석 결과 -->
+                <div class="analysis-steps" id="analysis-steps">
+                  <!-- 단계별 분석이 여기에 표시됩니다 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 지도 기술 섹션 -->
+    <section class="tech-explanation-section">
+      <div class="container">
+        <div class="tech-card">
+          <h3 class="tech-subtitle">
+            <span class="emoji">🗺️</span>
+            4. 지도 기술 (어떻게 정확하게 표시하나?)
+          </h3>
+
+          <!-- PostGIS 설명 -->
+          <div class="tech-method">
+            <h4 class="method-title">
+              <span class="emoji">📍</span>
+              PostGIS란? (공간 데이터베이스)
+            </h4>
+
+            <div class="method-analogy">
+              <div class="analogy-visual">
+                <div class="word-example normal">
+                  <span class="word-icon">📝</span>
+                  <span class="word-text">일반 데이터베이스</span>
+                  <span class="word-desc"
+                    >"이름: 카페A<br />주소: 부산시..."<br />→ 글자로만
+                    저장</span
+                  >
+                </div>
+                <div class="word-example positive">
+                  <span class="word-icon">🗺️</span>
+                  <span class="word-text">PostGIS (공간 DB)</span>
+                  <span class="word-desc"
+                    >"위치: 경도 129.0276<br />위도 35.1796"<br />→ 좌표로
+                    저장하고 거리 계산 가능!</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="calculation-example">
+              <h5>실제 쿼리 예시 - 쉽게 설명</h5>
+              <div class="formula">질문: "내 주변 1km 안에 뭐 있어?"</div>
+
+              <div class="example-post">PostGIS 답변:</div>
+
+              <div class="query-result-table">
+                <div class="table-header">
+                  <div class="table-cell">장소</div>
+                  <div class="table-cell">거리</div>
+                </div>
+                <div class="table-row">
+                  <div class="table-cell">○○카페</div>
+                  <div class="table-cell">230m</div>
+                </div>
+                <div class="table-row">
+                  <div class="table-cell">△△빈티지샵</div>
+                  <div class="table-cell">580m</div>
+                </div>
+                <div class="table-row">
+                  <div class="table-cell">☆☆갤러리</div>
+                  <div class="table-cell">920m</div>
+                </div>
+              </div>
+
+              <div class="final-result">계산 속도: 0.05초 (매우 빠름!)</div>
+            </div>
+          </div>
+
+          <!-- Mapbox 설명 -->
+          <div class="tech-method">
+            <h4 class="method-title">
+              <span class="emoji">🗺️</span>
+              Mapbox (지도 렌더링)
+            </h4>
+
+            <div class="method-analogy">
+              <div class="analogy-visual">
+                <div class="word-example normal">
+                  <span class="word-icon">🖼️</span>
+                  <span class="word-text">지도 그리기 도구</span>
+                  <span class="word-desc"
+                    >구글맵/카카오맵처럼<br />지도를 예쁘게 그려주는 도구</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="calculation-example">
+              <h5>라이브맵만의 커스텀</h5>
+
+              <div class="customization-list">
+                <div class="custom-item">
+                  <div class="custom-icon">🔴</div>
+                  <div class="custom-content">
+                    <strong>핀 색상으로 시간 표시</strong>
+                    <div class="custom-details">
+                      🔴 빨강 = 10분 이내 (hot!)<br />
+                      🟠 주황 = 30분 이내<br />
+                      🟡 노랑 = 1시간 이내<br />
+                      ⚪ 회색 = 1시간 이상
+                    </div>
+                  </div>
+                </div>
+
+                <div class="custom-item">
+                  <div class="custom-icon">💎</div>
+                  <div class="custom-content">
+                    <strong>숨은 명소 표시</strong>
+                    <div class="custom-details">
+                      💎 다이아몬드 = 숨은 명소<br />
+                      ⭐ 별 = 핫플레이스
+                    </div>
+                  </div>
+                </div>
+
+                <div class="custom-item">
+                  <div class="custom-icon">⚡</div>
+                  <div class="custom-content">
+                    <strong>실시간 업데이트</strong>
+                    <div class="custom-details">
+                      새 포스팅 올라오면<br />
+                      핀이 "뿅!" 하고 나타남
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 공간 인덱싱 시뮬레이터 -->
+          <div class="trust-score-simulator">
+            <h4 class="simulator-title">
+              <span class="emoji">📐</span>
+              공간 인덱싱 시뮬레이터
+            </h4>
+
+            <div class="score-calculator">
+              <div class="input-section">
+                <h5>거리 계산 체험하기</h5>
+                <div class="location-selector">
+                  <div class="location-input">
+                    <span class="emoji">📍</span>
+                    <span>내 위치 설정: 부산 서면역 (예시)</span>
+                  </div>
+
+                  <div class="radius-selector">
+                    <span>반경 선택:</span>
+                    <div class="radius-options">
+                      <label class="radius-option">
+                        <input type="radio" name="radius" value="500" checked />
+                        <span>500m</span>
+                      </label>
+                      <label class="radius-option">
+                        <input type="radio" name="radius" value="1000" />
+                        <span>1km</span>
+                      </label>
+                      <label class="radius-option">
+                        <input type="radio" name="radius" value="2000" />
+                        <span>2km</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <button class="calculate-btn" onclick="searchNearbyPlaces()">
+                    검색하기
+                  </button>
+                </div>
+              </div>
+
+              <div class="result-section" id="search-result">
+                <!-- 검색 결과가 여기에 표시됩니다 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 라이브 데모 시뮬레이터 -->
+    <section class="demo-section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="emoji">📍</span>
+          지도 플로팅 시뮬레이터
+        </h2>
+
+        <div class="map-simulator">
+          <div class="map-header">
+            <span class="location">[지금 부산 남포동]</span>
+            <button class="add-posting-btn" onclick="addNewPosting()">
+              새로운 포스팅 추가하기
+            </button>
+          </div>
+
+          <div class="map-area" id="map-area">
+            <div class="map-pin" data-time="방금 전">📍 빈티지샵</div>
+            <div class="map-pin" data-time="5분 전">📍 카페</div>
+            <div class="map-pin" data-time="10분 전">📍 플리마켓</div>
+          </div>
+        </div>
+
+        <!-- AI 추천 시뮬레이터 -->
+        <div class="ai-recommendation">
+          <h3 class="subsection-title">
+            <span class="emoji">🎮</span>
+            AI 추천 시뮬레이터
+          </h3>
+
+          <div class="chat-interface" id="chat-interface">
+            <div class="chat-message ai-message">
+              <span class="emoji">💬</span>
+              안녕하세요! 오늘 뭐 하고 싶으세요?
+            </div>
+
+            <div class="chat-options">
+              <button class="option-btn" onclick="selectOption('alone')">
+                😊 혼자 조용히
+              </button>
+              <button class="option-btn" onclick="selectOption('friends')">
+                👥 친구랑
+              </button>
+              <button class="option-btn" onclick="selectOption('date')">
+                💕 데이트
+              </button>
+              <button class="option-btn" onclick="selectOption('culture')">
+                🎨 문화생활
+              </button>
+            </div>
+          </div>
+
+          <div class="recommendation-result" id="recommendation-result">
+            <!-- AI 추천 결과가 여기에 표시됩니다 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 숫자로 보는 라이브맵 -->
+    <section class="stats-section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="emoji">📊</span>
+          숫자로 보는 라이브맵
+        </h2>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">85%</div>
+            <div class="stat-label">AI 필터링<br />정확도</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">10분</div>
+            <div class="stat-label">실시간<br />업데이트</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">30초</div>
+            <div class="stat-label">코스 생성<br />시간</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">90.4%</div>
+            <div class="stat-label">사용자<br />필요성 공감</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">20%</div>
+            <div class="stat-label">매출<br />증대 목표</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">30%</div>
+            <div class="stat-label">숨은 명소<br />추천 비율</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 수익 모델 -->
+    <section class="revenue-section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="emoji">💰</span>
+          어떻게 돈을 벌까?
+        </h2>
+
+        <div class="revenue-flow">
+          <div class="revenue-step">
+            <div class="step-icon">👥</div>
+            <div class="step-content">
+              <h4>무료 사용자</h4>
+              <p>탐험가들이 무료로 사용</p>
+            </div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="revenue-step">
+            <div class="step-icon">📊</div>
+            <div class="step-content">
+              <h4>데이터 생성</h4>
+              <p>어디 갔는지, 뭘 좋아하는지</p>
+            </div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="revenue-step">
+            <div class="step-icon">🏪</div>
+            <div class="step-content">
+              <h4>소상공인에게 가치 제공</h4>
+              <p>이 데이터로 분석 리포트 제공</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="revenue-methods">
+          <div class="method-card">
+            <div class="method-icon">📌</div>
+            <div class="method-content">
+              <h4>스마트 핀</h4>
+              <div class="price">월 3만원</div>
+              <p>내 가게 지도에 표시</p>
+            </div>
+          </div>
+          <div class="method-card">
+            <div class="method-icon">📊</div>
+            <div class="method-content">
+              <h4>분석 리포트</h4>
+              <div class="price">월 80만원</div>
+              <p>우리 동네 트렌드 알려줌</p>
+            </div>
+          </div>
+          <div class="method-card">
+            <div class="method-icon">💳</div>
+            <div class="method-content">
+              <h4>거래 수수료</h4>
+              <div class="price">5-10%</div>
+              <p>예약/쿠폰 사용 시</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="revenue-return">
+          <p>수익의 30%는 다시 환원 (쿠폰, 리워드, 무료 워크숍)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. 차별점 -->
+    <section class="comparison-section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="emoji">⚡</span>
+          VS 기존 서비스
+        </h2>
+
+        <div class="comparison-table-enhanced">
+          <div class="comparison-header-enhanced">
+            <div class="feature-column">기능</div>
+            <div class="service-column live-map-column">
+              <div class="service-logo">🗺️</div>
+              <div class="service-title">라이브맵</div>
+              <div class="service-badge">우리 서비스</div>
+            </div>
+            <div class="service-column competitor-column">
+              <div class="service-logo">🟡</div>
+              <div class="service-title">카카오맵</div>
+              <div class="service-badge">기존 서비스</div>
+            </div>
+            <div class="service-column competitor-column">
+              <div class="service-logo">📷</div>
+              <div class="service-title">인스타그램</div>
+              <div class="service-badge">기존 서비스</div>
+            </div>
+          </div>
+
+          <div class="comparison-row-enhanced">
+            <div class="feature-cell">
+              <div class="feature-icon">⚡</div>
+              <div class="feature-text">실시간 정보</div>
+            </div>
+            <div class="value-cell live-cell">
+              <div class="value-icon">✅</div>
+              <div class="value-text">10분</div>
+              <div class="value-desc">초고속 업데이트</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">없음</div>
+              <div class="value-desc">정적 정보만</div>
+            </div>
+            <div class="value-cell partial-cell">
+              <div class="value-icon">⚠️</div>
+              <div class="value-text">찾기 힘듦</div>
+              <div class="value-desc">검색 필요</div>
+            </div>
+          </div>
+
+          <div class="comparison-row-enhanced">
+            <div class="feature-cell">
+              <div class="feature-icon">🛡️</div>
+              <div class="feature-text">광고 필터링</div>
+            </div>
+            <div class="value-cell live-cell">
+              <div class="value-icon">✅</div>
+              <div class="value-text">85%</div>
+              <div class="value-desc">AI 자동 필터링</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">없음</div>
+              <div class="value-desc">광고 혼재</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">많음</div>
+              <div class="value-desc">광고 범람</div>
+            </div>
+          </div>
+
+          <div class="comparison-row-enhanced">
+            <div class="feature-cell">
+              <div class="feature-icon">🤖</div>
+              <div class="feature-text">AI 추천</div>
+            </div>
+            <div class="value-cell live-cell">
+              <div class="value-icon">✅</div>
+              <div class="value-text">30초</div>
+              <div class="value-desc">개인 맞춤 추천</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">없음</div>
+              <div class="value-desc">단순 검색만</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">없음</div>
+              <div class="value-desc">알고리즘 기반</div>
+            </div>
+          </div>
+
+          <div class="comparison-row-enhanced">
+            <div class="feature-cell">
+              <div class="feature-icon">💎</div>
+              <div class="feature-text">숨은 명소</div>
+            </div>
+            <div class="value-cell live-cell">
+              <div class="value-icon">✅</div>
+              <div class="value-text">30%</div>
+              <div class="value-desc">발굴 비율</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">핫플위주</div>
+              <div class="value-desc">인기 장소만</div>
+            </div>
+            <div class="value-cell partial-cell">
+              <div class="value-icon">⚠️</div>
+              <div class="value-text">발견 어려움</div>
+              <div class="value-desc">검색 의존</div>
+            </div>
+          </div>
+
+          <div class="comparison-row-enhanced">
+            <div class="feature-cell">
+              <div class="feature-icon">💝</div>
+              <div class="feature-text">소상공인 지원</div>
+            </div>
+            <div class="value-cell live-cell">
+              <div class="value-icon">✅</div>
+              <div class="value-text">30% 환원</div>
+              <div class="value-desc">실제 혜택</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">없음</div>
+              <div class="value-desc">광고비만</div>
+            </div>
+            <div class="value-cell none-cell">
+              <div class="value-icon">❌</div>
+              <div class="value-text">없음</div>
+              <div class="value-desc">마케팅 비용</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. 일정 -->
+    <section class="timeline-section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="emoji">📅</span>
+          언제 뭘 하나요?
+        </h2>
+
+        <div class="project-timeline">
+          <div class="timeline-item-large">
+            <div class="timeline-date">2025년 10월</div>
+            <div class="timeline-content">
+              <div class="timeline-icon">🎤</div>
+              <h4>경진대회 발표</h4>
+              <p>10/25 발표</p>
+            </div>
+          </div>
+
+          <div class="timeline-item-large">
+            <div class="timeline-date">2025년 12월</div>
+            <div class="timeline-content">
+              <div class="timeline-icon">🚀</div>
+              <h4>부산에서 첫 서비스 시작</h4>
+              <p>MVP 출시</p>
+            </div>
+          </div>
+
+          <div class="timeline-item-large">
+            <div class="timeline-date">2026년</div>
+            <div class="timeline-content">
+              <div class="timeline-icon">📈</div>
+              <h4>부산 전체로 확대</h4>
+              <p>목표: 사용자 10만명</p>
+            </div>
+          </div>
+
+          <div class="timeline-item-large">
+            <div class="timeline-date">2027년</div>
+            <div class="timeline-content">
+              <div class="timeline-icon">🌏</div>
+              <h4>전국으로 확장</h4>
+              <p>전국 서비스</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FAQ -->
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="section-title">
+          <span class="emoji">❓</span>
+          자주 묻는 질문
+        </h2>
+
+        <div class="faq-list">
+          <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+              AI가 실수로 진짜 정보를 막으면?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              사람이 24시간 내 재검토해요. 정확도 85%로 오류는 15%만
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+              개인정보는 안전한가요?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              위치 정보는 익명화해서 저장하고, 언제든 삭제 가능해요
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+              소상공인이 비용 부담 안될까요?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              월 3만원 (배달앱의 1/5 수준). 효과 보고 결정 가능해요
+            </div>
+          </div>
+
+          <div class="faq-item" onclick="toggleFAQ(this)">
+            <div class="faq-question">
+              핫플레이스만 더 유명해지지 않나요?
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              AI가 강제로 30%는 숨은 명소 추천하고, 게임 퀘스트로 유도해요
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. 마지막 정리 -->
+    <section class="summary-section">
+      <div class="container">
+        <div class="summary-card">
+          <h2 class="summary-title">
+            <span class="emoji">🗺️</span>
+            라이브맵은
+          </h2>
+
+          <div class="summary-flow">
+            <span>SNS</span>
+            <span>→</span>
+            <span>AI 필터링</span>
+            <span>→</span>
+            <span>실시간 지도</span>
+          </div>
+
+          <p class="summary-subtitle">이 3단계로 작동합니다</p>
+
+          <div class="summary-details">
+            <div class="detail-section">
+              <h4>핵심 기술:</h4>
+              <ul>
+                <li>✅ TF-IDF + LLM AI 필터링 (85%)</li>
+                <li>✅ 실시간 크롤링 (10분)</li>
+                <li>✅ 공간 인덱싱 (10m 정확도)</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h4>목표:</h4>
+              <ul>
+                <li>🎯 2025년 12월 부산 론칭</li>
+                <li>🎯 사용자 10만명, 소상공인 5천개</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h4>차별점:</h4>
+              <ul>
+                <li>💡 광고 없는 순수 정보</li>
+                <li>💡 숨은 명소 발굴</li>
+                <li>💡 상생 (수익 30% 환원)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
