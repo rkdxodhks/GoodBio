@@ -440,22 +440,33 @@ body {
   grid-template-rows: repeat(2, 1fr);
   gap: var(--spacing-6);
   margin-top: var(--spacing-6);
+  align-items: stretch;
 }
 
 .problem-item {
   background: var(--surface-default);
   padding: var(--spacing-6);
   border-radius: 0.75rem;
-  border-left: 0.25rem solid #ef4444;
   border: 1px solid var(--border-default);
   border-left: 0.25rem solid #ef4444;
   box-shadow: var(--shadow-sm);
   transition: all var(--motion-fast) var(--ease-out);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .problem-item:hover {
   transform: translateY(-0.125rem);
   box-shadow: var(--shadow-md);
+}
+
+.problem-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-3);
+  display: block;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .problem-item h3 {
@@ -464,13 +475,15 @@ body {
   margin-bottom: var(--spacing-3);
   font-weight: 600;
   line-height: 1.4;
+  flex-shrink: 0;
 }
 
-.problem-item p {
+.problem-item > p {
   color: var(--text-secondary);
   font-size: 1.125rem;
   line-height: 1.6;
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-4);
+  flex: 1;
 }
 
 .problem-detail {
@@ -480,6 +493,8 @@ body {
   font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.6;
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 /* 비교 컨테이너 */
@@ -1443,13 +1458,6 @@ body {
   font-size: 3rem;
   margin-bottom: var(--spacing-4);
   text-align: center;
-  display: block;
-  line-height: 1;
-}
-
-.problem-icon {
-  font-size: 2.5rem;
-  margin-bottom: var(--spacing-3);
   display: block;
   line-height: 1;
 }
