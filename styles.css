@@ -100,7 +100,7 @@ body {
   display: none;
   width: 100%;
   height: 100vh;
-  padding: var(--spacing-6) var(--spacing-8);
+  padding: var(--spacing-6);
   position: absolute;
   top: 0;
   left: 0;
@@ -130,6 +130,7 @@ body {
   padding: var(--spacing-8);
   max-width: 87.5rem; /* 1400px */
   width: 100%;
+  margin: 0 auto;
   box-shadow: var(--shadow-xl);
   backdrop-filter: var(--blur-md);
   border: 1px solid var(--border-default);
@@ -175,6 +176,29 @@ body {
 
 .slide-content::-webkit-scrollbar-thumb:hover {
   background: var(--text-secondary);
+}
+
+/* 발표자 노트 */
+.speaker-notes {
+  display: none; /* 기본적으로 숨김, 프레젠터 모드에서만 표시 가능 */
+  position: absolute;
+  bottom: var(--spacing-4);
+  left: var(--spacing-4);
+  right: var(--spacing-4);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: var(--spacing-4);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  max-height: 10rem;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+/* 프레젠터 패널에서 노트 표시 시 */
+.presenter-mode .speaker-notes {
+  display: block;
 }
 
 .slide-content h2 {
@@ -413,6 +437,7 @@ body {
 .problems-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: var(--spacing-6);
   margin-top: var(--spacing-6);
 }
@@ -519,6 +544,7 @@ body {
 .features-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: var(--spacing-6);
   margin-top: var(--spacing-10);
 }
@@ -1698,7 +1724,7 @@ body {
   position: fixed;
   bottom: var(--spacing-6);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(calc(100% + var(--spacing-6)));
   display: flex;
   align-items: center;
   gap: var(--spacing-4);
@@ -1709,11 +1735,35 @@ body {
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-default);
   z-index: 1000;
-  transition: all var(--motion-fast) var(--ease-out);
+  transition: transform var(--motion-normal) var(--ease-out),
+    opacity var(--motion-normal) var(--ease-out),
+    box-shadow var(--motion-fast) var(--ease-out);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .navigation:hover {
   box-shadow: var(--shadow-xl);
+}
+
+/* 네비게이션 hover 영역 */
+.navigation-hover-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  z-index: 998;
+  pointer-events: auto;
+}
+
+/* hover 영역이나 네비게이션에 마우스 올릴 때 표시 */
+body:not(.minimal-ui) .navigation-hover-area:hover ~ .navigation,
+body:not(.minimal-ui) .navigation:hover,
+body:not(.minimal-ui) .navigation:focus-within {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .nav-button {
@@ -1940,9 +1990,31 @@ body {
   color: var(--text-secondary);
 }
 
+.speaker-notes-section {
+  margin-top: var(--spacing-4);
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--border-default);
+}
+
+.speaker-notes-content {
+  margin-top: var(--spacing-3);
+  padding: var(--spacing-3);
+  background: var(--surface-subtle);
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-height: 10rem;
+  overflow-y: auto;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+
 .timer-section {
   padding-top: var(--spacing-4);
   border-top: 1px solid var(--border-default);
+  margin-top: var(--spacing-4);
 }
 
 .timer {

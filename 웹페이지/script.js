@@ -235,6 +235,7 @@ function updatePresenterPanel() {
   const presenterSlide = document.getElementById("presenter-current-slide");
   const presenterTitle = document.getElementById("presenter-slide-title");
   const nextPreview = document.getElementById("next-slide-preview");
+  const presenterNotes = document.getElementById("presenter-notes");
   
   if (presenterSlide) {
     presenterSlide.textContent = currentSlide + 1;
@@ -248,6 +249,24 @@ function updatePresenterPanel() {
       presenterTitle.textContent = slideHeading.textContent || "슬라이드 제목 없음";
     } else {
       presenterTitle.textContent = "타이틀 슬라이드";
+    }
+  }
+  
+  // 발표자 노트 가져오기
+  if (presenterNotes && currentSlideElement) {
+    const notesElement = currentSlideElement.querySelector(".speaker-notes");
+    if (notesElement) {
+      // 텍스트를 가져와서 줄바꿈을 자연스럽게 처리
+      let notesText = notesElement.textContent.trim() || "";
+      // HTML의 줄바꿈을 실제 줄바꿈으로 변환
+      notesText = notesText.replace(/\s+/g, ' ').trim();
+      // 문장 단위로 줄바꿈 추가 (마침표, 느낌표, 물음표 뒤)
+      notesText = notesText.replace(/([.!?])\s+/g, '$1\n\n');
+      presenterNotes.textContent = notesText;
+      presenterNotes.style.display = "block";
+    } else {
+      presenterNotes.textContent = "";
+      presenterNotes.style.display = "none";
     }
   }
   
