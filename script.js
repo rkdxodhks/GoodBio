@@ -7,29 +7,29 @@ let slideDirection = 1; // 1: 다음, -1: 이전
 function updateSlideIndicator() {
   document.getElementById("current-slide").textContent = currentSlide + 1;
   document.getElementById("total-slides").textContent = totalSlides;
-  
+
   // 슬라이드 번호 배지 업데이트
   const badgeCurrent = document.getElementById("badge-current");
   const badgeTotal = document.getElementById("badge-total");
   if (badgeCurrent) badgeCurrent.textContent = currentSlide + 1;
   if (badgeTotal) badgeTotal.textContent = totalSlides;
-  
+
   // 진행 바 업데이트
   const progressBar = document.getElementById("progress-bar");
   if (progressBar) {
     const progress = ((currentSlide + 1) / totalSlides) * 100;
     progressBar.style.width = `${progress}%`;
-    
+
     // ARIA 속성 업데이트
     const progressContainer = document.querySelector(".progress-bar-container");
     if (progressContainer) {
       progressContainer.setAttribute("aria-valuenow", currentSlide + 1);
     }
   }
-  
+
   // 미니맵 업데이트
   updateMinimap();
-  
+
   // 발표자 패널 업데이트
   updatePresenterPanel();
 }
@@ -37,11 +37,11 @@ function updateSlideIndicator() {
 // 슬라이드 변경 함수
 function changeSlide(direction) {
   if (slides.length === 0) return;
-  
+
   const prevSlide = currentSlide;
   slides[currentSlide].classList.remove("active");
   slides[currentSlide].classList.remove("prev", "next");
-  
+
   slideDirection = direction;
   currentSlide += direction;
 
@@ -61,7 +61,7 @@ function changeSlide(direction) {
 
   slides[currentSlide].classList.add("active");
   updateSlideIndicator();
-  
+
   // 첫 방문 힌트 숨기기
   hideHint();
 }
@@ -69,10 +69,10 @@ function changeSlide(direction) {
 // 특정 슬라이드로 이동
 function goToSlide(index) {
   if (index < 0 || index >= totalSlides) return;
-  
+
   const direction = index > currentSlide ? 1 : -1;
   const diff = Math.abs(index - currentSlide);
-  
+
   // 직접 이동
   slides[currentSlide].classList.remove("active");
   currentSlide = index;
@@ -123,25 +123,25 @@ function handleSwipe() {
 function initMinimap() {
   const minimapContent = document.getElementById("minimap-content");
   if (!minimapContent) return;
-  
+
   minimapContent.innerHTML = "";
-  
+
   slides.forEach((slide, index) => {
     const slideItem = document.createElement("button");
     slideItem.className = "minimap-slide-item";
     slideItem.setAttribute("role", "listitem");
     slideItem.setAttribute("aria-label", `슬라이드 ${index + 1}로 이동`);
-    
+
     const slideNumber = document.createElement("span");
     slideNumber.className = "slide-number";
     slideNumber.textContent = index + 1;
-    
+
     slideItem.appendChild(slideNumber);
     slideItem.addEventListener("click", () => goToSlide(index));
-    
+
     minimapContent.appendChild(slideItem);
   });
-  
+
   updateMinimap();
 }
 
@@ -157,11 +157,11 @@ function updateMinimap() {
 function toggleMinimap() {
   const minimapContent = document.getElementById("minimap-content");
   const minimapToggle = document.getElementById("minimap-toggle");
-  
+
   if (!minimapContent || !minimapToggle) return;
-  
+
   const isExpanded = minimapContent.classList.contains("active");
-  
+
   if (isExpanded) {
     minimapContent.classList.remove("active");
     minimapToggle.setAttribute("aria-expanded", "false");
@@ -176,7 +176,7 @@ function showHint() {
   // localStorage 확인
   const hasVisited = localStorage.getItem("hasVisitedSlide");
   if (hasVisited) return;
-  
+
   const hint = document.getElementById("first-visit-hint");
   if (hint) {
     hint.classList.add("show");
@@ -204,27 +204,33 @@ function hideHint() {
 document.addEventListener("DOMContentLoaded", () => {
   updateSlideIndicator();
   initMinimap();
-  
+
   // 미니맵 토글 이벤트
   const minimapToggle = document.getElementById("minimap-toggle");
   if (minimapToggle) {
     minimapToggle.addEventListener("click", toggleMinimap);
   }
-  
+
   // 첫 방문 힌트 (약간의 지연 후 표시)
   setTimeout(() => {
     showHint();
   }, 1000);
-  
+
   // 외부 클릭 시 미니맵 닫기
   document.addEventListener("click", (e) => {
     const minimap = document.getElementById("slide-minimap");
     const minimapContent = document.getElementById("minimap-content");
-    
-    if (minimap && minimapContent && minimapContent.classList.contains("active")) {
+
+    if (
+      minimap &&
+      minimapContent &&
+      minimapContent.classList.contains("active")
+    ) {
       if (!minimap.contains(e.target)) {
         minimapContent.classList.remove("active");
-        document.getElementById("minimap-toggle")?.setAttribute("aria-expanded", "false");
+        document
+          .getElementById("minimap-toggle")
+          ?.setAttribute("aria-expanded", "false");
       }
     }
   });
@@ -236,49 +242,55 @@ function updatePresenterPanel() {
   const presenterTitle = document.getElementById("presenter-slide-title");
   const nextPreview = document.getElementById("next-slide-preview");
   const presenterNotes = document.getElementById("presenter-notes");
-  
+
   if (presenterSlide) {
     presenterSlide.textContent = currentSlide + 1;
   }
-  
+
   // 현재 슬라이드 제목 가져오기
   const currentSlideElement = slides[currentSlide];
   if (currentSlideElement && presenterTitle) {
     const slideHeading = currentSlideElement.querySelector("h2");
     if (slideHeading) {
-      presenterTitle.textContent = slideHeading.textContent || "슬라이드 제목 없음";
+      presenterTitle.textContent =
+        slideHeading.textContent || "슬라이드 제목 없음";
     } else {
       presenterTitle.textContent = "타이틀 슬라이드";
     }
   }
-  
+
   // 발표자 노트 가져오기
   if (presenterNotes && currentSlideElement) {
     const notesElement = currentSlideElement.querySelector(".speaker-notes");
-    if (notesElement) {
+    if (notesElement && notesElement.textContent.trim()) {
       // 텍스트를 가져와서 줄바꿈을 자연스럽게 처리
-      let notesText = notesElement.textContent.trim() || "";
-      // HTML의 줄바꿈을 실제 줄바꿈으로 변환
-      notesText = notesText.replace(/\s+/g, ' ').trim();
+      let notesText = notesElement.textContent.trim();
+      // HTML의 줄바꿈/공백을 단일 공백으로 통합
+      notesText = notesText.replace(/\s+/g, " ").trim();
       // 문장 단위로 줄바꿈 추가 (마침표, 느낌표, 물음표 뒤)
-      notesText = notesText.replace(/([.!?])\s+/g, '$1\n\n');
+      notesText = notesText.replace(/([.!?])\s+/g, "$1\n\n");
+      // 문장 시작 부분의 공백 제거
+      notesText = notesText.replace(/\n\n\s+/g, "\n\n").trim();
+
       presenterNotes.textContent = notesText;
       presenterNotes.style.display = "block";
+      presenterNotes.style.visibility = "visible";
     } else {
-      presenterNotes.textContent = "";
-      presenterNotes.style.display = "none";
+      presenterNotes.textContent = "발표자 노트가 없습니다.";
+      presenterNotes.style.display = "block";
+      presenterNotes.style.visibility = "visible";
     }
   }
-  
+
   // 다음 슬라이드 미리보기
   if (nextPreview) {
     const nextIndex = (currentSlide + 1) % totalSlides;
     const nextSlide = slides[nextIndex];
-    
+
     if (nextSlide) {
       const nextHeading = nextSlide.querySelector("h2");
       const nextContent = nextSlide.querySelector(".slide-content");
-      
+
       if (nextHeading) {
         nextPreview.innerHTML = `<strong>${nextHeading.textContent}</strong>`;
       } else {
@@ -292,13 +304,16 @@ function updatePresenterPanel() {
 function togglePresentationMode() {
   const panel = document.getElementById("presenter-panel");
   const btn = document.getElementById("presentation-mode-btn");
-  
+
   if (panel && btn) {
     const isActive = panel.classList.toggle("active");
     btn.classList.toggle("active", isActive);
-    
+
     if (isActive) {
-      updatePresenterPanel();
+      // 약간의 지연 후 업데이트하여 DOM이 준비된 후 실행
+      setTimeout(() => {
+        updatePresenterPanel();
+      }, 100);
       // 발표 모드 시작 시 타이머 자동 시작
       if (!timerRunning) {
         startTimer();
@@ -310,7 +325,7 @@ function togglePresentationMode() {
 // 전체 화면 토글
 function toggleFullscreen() {
   if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen().catch(err => {
+    document.documentElement.requestFullscreen().catch((err) => {
       console.log("전체 화면 진입 실패:", err);
     });
     document.body.classList.add("fullscreen");
@@ -346,9 +361,9 @@ function startTimer() {
     timerEl.classList.add("running");
     timerEl.classList.remove("warning", "danger");
   }
-  
+
   if (timerInterval) clearInterval(timerInterval);
-  
+
   timerInterval = setInterval(() => {
     updateTimer();
   }, 100);
@@ -358,20 +373,24 @@ function startTimer() {
 function updateTimer() {
   const timerEl = document.getElementById("presentation-timer");
   if (!timerEl) return;
-  
+
   const now = Date.now();
   const elapsed = Math.floor((now - timerStartTime) / 1000) + timerPausedTime;
-  
+
   const minutes = Math.floor(elapsed / 60);
   const seconds = elapsed % 60;
-  
-  timerEl.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-  
+
+  timerEl.textContent = `${String(minutes).padStart(2, "0")}:${String(
+    seconds
+  ).padStart(2, "0")}`;
+
   // 경고 상태
-  if (elapsed >= 600) { // 10분
+  if (elapsed >= 600) {
+    // 10분
     timerEl.classList.remove("running", "warning");
     timerEl.classList.add("danger");
-  } else if (elapsed >= 480) { // 8분
+  } else if (elapsed >= 480) {
+    // 8분
     timerEl.classList.remove("running", "danger");
     timerEl.classList.add("warning");
   }
@@ -380,7 +399,7 @@ function updateTimer() {
 // 타이머 토글 (일시정지/재개)
 function toggleTimer() {
   const toggleBtn = document.getElementById("timer-toggle");
-  
+
   if (timerRunning) {
     // 일시정지
     timerPausedTime += Math.floor((Date.now() - timerStartTime) / 1000);
@@ -406,10 +425,10 @@ function resetTimer() {
   timerPausedTime = 0;
   timerRunning = false;
   clearInterval(timerInterval);
-  
+
   const timerEl = document.getElementById("presentation-timer");
   const toggleBtn = document.getElementById("timer-toggle");
-  
+
   if (timerEl) {
     timerEl.textContent = "00:00";
     timerEl.classList.remove("running", "warning", "danger");
@@ -421,7 +440,7 @@ function resetTimer() {
 document.addEventListener("keydown", (e) => {
   // input/textarea에서는 처리하지 않음
   if (e.target.matches("input, textarea")) return;
-  
+
   // 슬라이드 네비게이션
   if (e.key === "ArrowLeft") {
     changeSlide(-1);
@@ -467,20 +486,20 @@ const comparisonReduction = 0.4; // 기존 시스템은 40% 감소
 // 탄소 흡수량 계산 함수
 function calculateAbsorption(area, year, isComparison = false) {
   const baseRate = baseAbsorptionRate * area;
-  
+
   // 연차별 성장률 (60%, 80%, 90%, 100%)
   const growthRates = [0.6, 0.8, 0.9, 1.0];
   const rate = growthRates[Math.min(year - 1, 3)];
-  
+
   let result = baseRate * rate;
-  
+
   // 비교 모드 (기존 시스템)
   if (isComparison) {
     result = result * (1 - comparisonReduction); // 40% 감소
     // 정착률도 낮음 (60% 정착률 가정)
     result = result * 0.6;
   }
-  
+
   return Math.round(result);
 }
 
@@ -489,18 +508,18 @@ function updateSimulator() {
   const areaInput = document.getElementById("area-input");
   const area = parseFloat(areaInput.value) || 1;
   currentArea = area;
-  
+
   const selectedArea = document.getElementById("selected-area");
   const calculatedAbsorption = document.getElementById("calculated-absorption");
   const totalAbsorption = document.getElementById("total-absorption");
   const annualAbsorption = document.getElementById("annual-absorption");
   const settlementRate = document.getElementById("settlement-rate");
-  
+
   // 면적 표시
   if (selectedArea) {
     selectedArea.textContent = `${area} ha`;
   }
-  
+
   // 연간 탄소 흡수량 (4년차 기준)
   const annualAbs = calculateAbsorption(area, 4, isCompareMode);
   if (calculatedAbsorption) {
@@ -509,7 +528,7 @@ function updateSimulator() {
   if (annualAbsorption) {
     annualAbsorption.textContent = `${annualAbs.toLocaleString()} ton`;
   }
-  
+
   // 누적 탄소 흡수량
   let total = 0;
   for (let year = 1; year <= 4; year++) {
@@ -518,13 +537,13 @@ function updateSimulator() {
   if (totalAbsorption) {
     totalAbsorption.textContent = `${total.toLocaleString()} ton CO₂`;
   }
-  
+
   // 정착률 업데이트
   const settlement = isCompareMode ? "60%" : "93%";
   if (settlementRate) {
     settlementRate.textContent = settlement;
   }
-  
+
   // 차트 업데이트
   updateChart();
 }
@@ -533,13 +552,13 @@ function updateSimulator() {
 function updateChart() {
   const chartBars = document.querySelectorAll(".chart-bar");
   const selectedYear = document.getElementById("year-select")?.value;
-  
+
   chartBars.forEach((bar, index) => {
     const year = index + 1;
     const absorption = calculateAbsorption(currentArea, year, isCompareMode);
     const maxAbsorption = calculateAbsorption(currentArea, 4, isCompareMode);
     const height = (absorption / maxAbsorption) * 100;
-    
+
     // 연도 선택 시 해당 연도만 표시
     if (selectedYear && selectedYear !== "all") {
       if (year === parseInt(selectedYear)) {
@@ -552,11 +571,11 @@ function updateChart() {
       bar.style.display = "flex";
       bar.style.opacity = "1";
     }
-    
+
     // 높이 및 값 업데이트
     bar.style.height = `${height}%`;
     bar.querySelector(".chart-value").textContent = absorption.toLocaleString();
-    
+
     // 비교 모드 시 색상 변경
     if (isCompareMode) {
       bar.classList.add("comparison-mode");
@@ -581,7 +600,7 @@ function initSimulator() {
       updateSimulator();
     });
   }
-  
+
   // 초기 업데이트
   updateSimulator();
 }
@@ -591,21 +610,23 @@ function toggleCompare() {
   const toggleBtn = document.getElementById("compare-toggle");
   const toggleText = document.getElementById("toggle-text");
   const indicator = document.getElementById("comparison-indicator");
-  
+
   isCompareMode = !isCompareMode;
-  
+
   if (toggleBtn) {
     toggleBtn.setAttribute("aria-pressed", isCompareMode);
   }
-  
+
   if (toggleText) {
-    toggleText.textContent = isCompareMode ? "우리 시스템 보기" : "기존 시스템 보기";
+    toggleText.textContent = isCompareMode
+      ? "우리 시스템 보기"
+      : "기존 시스템 보기";
   }
-  
+
   if (indicator) {
     indicator.style.display = isCompareMode ? "flex" : "none";
   }
-  
+
   updateSimulator();
 }
 
@@ -618,19 +639,19 @@ function updateYearChart() {
 function resetSimulator() {
   const areaInput = document.getElementById("area-input");
   const yearSelect = document.getElementById("year-select");
-  
+
   if (areaInput) {
     areaInput.value = 1;
   }
   if (yearSelect) {
     yearSelect.value = "all";
   }
-  
+
   isCompareMode = false;
   const toggleBtn = document.getElementById("compare-toggle");
   const toggleText = document.getElementById("toggle-text");
   const indicator = document.getElementById("comparison-indicator");
-  
+
   if (toggleBtn) {
     toggleBtn.setAttribute("aria-pressed", "false");
   }
@@ -640,7 +661,7 @@ function resetSimulator() {
   if (indicator) {
     indicator.style.display = "none";
   }
-  
+
   updateSimulator();
 }
 
@@ -656,12 +677,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // 슬라이드 변경 감지하여 시뮬레이터 초기화
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      if (mutation.type === "attributes" && mutation.attributeName === "class") {
+      if (
+        mutation.type === "attributes" &&
+        mutation.attributeName === "class"
+      ) {
         const target = mutation.target;
         if (target.classList.contains("active")) {
           // 시뮬레이터 슬라이드인지 확인 (슬라이드 7)
           const slideIndex = Array.from(slides).indexOf(target);
-          if (slideIndex === 6) { // 0-based index, 시뮬레이터는 7번째(6번 인덱스)
+          if (slideIndex === 6) {
+            // 0-based index, 시뮬레이터는 7번째(6번 인덱스)
             setTimeout(() => {
               initSimulator();
             }, 100);
@@ -675,7 +700,7 @@ document.addEventListener("DOMContentLoaded", () => {
   slides.forEach((slide) => {
     observer.observe(slide, { attributes: true });
   });
-  
+
   // 초기 시뮬레이터 설정
   if (slides[6] && slides[6].classList.contains("active")) {
     initSimulator();
