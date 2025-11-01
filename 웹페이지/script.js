@@ -39,6 +39,10 @@ function changeSlide(direction) {
   if (slides.length === 0) return;
 
   const prevSlide = currentSlide;
+  const prevSlideContent = slides[currentSlide].querySelector(".slide-content");
+  
+  // 이전 슬라이드 스크롤 위치 저장 (선택사항)
+  
   slides[currentSlide].classList.remove("active");
   slides[currentSlide].classList.remove("prev", "next");
 
@@ -60,6 +64,13 @@ function changeSlide(direction) {
   }
 
   slides[currentSlide].classList.add("active");
+  
+  // 새 슬라이드로 스크롤 최상단 이동
+  const currentSlideContent = slides[currentSlide].querySelector(".slide-content");
+  if (currentSlideContent) {
+    currentSlideContent.scrollTop = 0;
+  }
+  
   updateSlideIndicator();
 
   // 첫 방문 힌트 숨기기
@@ -200,10 +211,23 @@ function hideHint() {
   }
 }
 
+// 스크롤 이벤트 리스너 추가
+function initScrollListeners() {
+  slides.forEach((slide) => {
+    const slideContent = slide.querySelector(".slide-content");
+    if (slideContent) {
+      slideContent.addEventListener("scroll", updateScrollHints);
+      // 초기 로드 시에도 체크
+      updateScrollHints();
+    }
+  });
+}
+
 // 초기화
 document.addEventListener("DOMContentLoaded", () => {
   updateSlideIndicator();
   initMinimap();
+  initScrollListeners();
 
   // 미니맵 토글 이벤트
   const minimapToggle = document.getElementById("minimap-toggle");
@@ -235,6 +259,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// 스크롤 위치 감지 및 힌트 업데이트
+function updateScrollHints() {
+  const currentSlideElement = slides[currentSlide];
+  if (!currentSlideElement) return;
+
+  const slideContent = currentSlideElement.querySelector(".slide-content");
+  if (!slideContent) return;
+
+  const scrollTop = slideContent.scrollTop;
+  const scrollHeight = slideContent.scrollHeight;
+  const clientHeight = slideContent.clientHeight;
+  const maxScroll = scrollHeight - clientHeight;
+
+  // 스크롤 위치에 따른 클래스 업데이트
+  slideContent.classList.remove("scrolled-top", "scrolled-middle", "scrolled-bottom");
+
+  if (maxScroll <= 1) {
+    // 스크롤이 필요 없는 경우
+    return;
+  }
+
+  if (scrollTop <= 10) {
+    slideContent.classList.add("scrolled-top");
+  } else if (scrollTop >= maxScroll - 10) {
+    slideContent.classList.add("scrolled-bottom");
+  } else {
+    slideContent.classList.add("scrolled-middle");
+  }
+}
 
 // 발표자 패널 업데이트
 function updatePresenterPanel() {
@@ -298,6 +352,9 @@ function updatePresenterPanel() {
       }
     }
   }
+
+  // 스크롤 힌트 업데이트
+  updateScrollHints();
 }
 
 // 발표 모드 토글
