@@ -478,7 +478,7 @@ document.addEventListener("fullscreenchange", () => {
 });
 
 // 시뮬레이터 관련 변수
-let isCompareMode = false;
+let isCompareMode = true; // 기본값: 기존 시스템 모드
 let currentArea = 1; // 기본 1ha
 const baseAbsorptionRate = 250; // 1ha당 연간 250 ton
 const comparisonReduction = 0.4; // 기존 시스템은 40% 감소
@@ -601,6 +601,21 @@ function initSimulator() {
     });
   }
 
+  // 초기 상태에 맞게 UI 업데이트 (기존 시스템 모드)
+  const toggleBtn = document.getElementById("compare-toggle");
+  const toggleText = document.getElementById("toggle-text");
+  const indicator = document.getElementById("comparison-indicator");
+
+  if (toggleBtn) {
+    toggleBtn.setAttribute("aria-pressed", "true");
+  }
+  if (toggleText) {
+    toggleText.textContent = "우리 시스템 보기";
+  }
+  if (indicator) {
+    indicator.style.display = "flex";
+  }
+
   // 초기 업데이트
   updateSimulator();
 }
@@ -647,19 +662,20 @@ function resetSimulator() {
     yearSelect.value = "all";
   }
 
-  isCompareMode = false;
+  // 기본값: 기존 시스템 모드
+  isCompareMode = true;
   const toggleBtn = document.getElementById("compare-toggle");
   const toggleText = document.getElementById("toggle-text");
   const indicator = document.getElementById("comparison-indicator");
 
   if (toggleBtn) {
-    toggleBtn.setAttribute("aria-pressed", "false");
+    toggleBtn.setAttribute("aria-pressed", "true");
   }
   if (toggleText) {
-    toggleText.textContent = "기존 시스템 보기";
+    toggleText.textContent = "우리 시스템 보기";
   }
   if (indicator) {
-    indicator.style.display = "none";
+    indicator.style.display = "flex";
   }
 
   updateSimulator();
